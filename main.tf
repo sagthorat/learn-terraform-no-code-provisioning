@@ -20,7 +20,7 @@ module "vpc" {
   name                 = "${random_pet.random.id}-demo-delete"
   cidr                 = "192.168.0.0/16"
   azs                  = data.aws_availability_zones.available.names
-  public_subnets       = ["192.168.1.0/24", "192.168.2.0/24,"192.168.3.0/24""]
+  public_subnets       = ["192.168.1.0/24","192.168.2.0/24","192.168.3.0/24"]
   enable_dns_hostnames = true
   enable_dns_support   = true
 }
