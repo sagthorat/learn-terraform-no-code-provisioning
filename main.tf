@@ -9,13 +9,11 @@ provider "random" {}
 
 data "aws_availability_zones" "available" {}
 
-resource "random_pet" "random" {}
-
 module "vpc" {
   source  = "terraform-aws-modules/vpc/aws"
   version = "2.77.0"
 
-  name                 = "${random_pet.random.id}-education"
+  name                 = "${random_pet.random.id}-demo-delete"
   cidr                 = "192.168.0.0/16"
   azs                  = data.aws_availability_zones.available.names
   public_subnets       = ["192.168.1.0/24", "192.168.2.0/24"]
@@ -66,7 +64,7 @@ resource "aws_db_parameter_group" "education" {
 }
 
 resource "aws_db_instance" "education" {
-  identifier             = "${var.db_name}-${random_pet.random.id}"
+  identifier             = "${var.db_name}-demo-delete-5733689486498"
   instance_class         = "db.t3.micro"
   allocated_storage      = 5
   engine                 = "postgres"
