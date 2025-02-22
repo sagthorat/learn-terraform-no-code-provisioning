@@ -1,8 +1,7 @@
 resource "random_pet" "random" {}
 
 module "vpc" {
-  source  = "terraform-aws-modules/vpc/aws"
-  version = "2.77.0"
+  source  = "terraform-aws-modules/vpc/aws"  
 
   name                 = "${random_pet.random.id}-demo-delete"
   cidr                 = "192.168.0.0/16"
