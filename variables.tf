@@ -25,4 +25,3 @@ variable "tfc_aws_dynamic_credentials" {
     }))
   })
 }
-
